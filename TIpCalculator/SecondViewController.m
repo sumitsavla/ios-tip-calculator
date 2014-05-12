@@ -9,6 +9,8 @@
 #import "SecondViewController.h"
 
 @interface SecondViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *splitDefault;
+@property (weak, nonatomic) IBOutlet UITextField *tipDefault;
 
 @end
 
@@ -17,11 +19,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Load Defaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    int splitValue = [defaults integerForKey:@"splitDefault"];
+    self.splitDefault.text = [NSString stringWithFormat:@"%d", splitValue];
+    int tipValue = [defaults integerForKey:@"tipDefault"];
+    self.tipDefault.text = [NSString stringWithFormat:@"%d%s", tipValue, "%"];
+	
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (IBAction)onTap:(id)sender {
+    // Save defaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:[self.splitDefault.text intValue]forKey:@"splitDefault"];
+    [defaults setInteger:[self.tipDefault.text intValue] forKey:@"tipDefault"];
+    [defaults synchronize];
+    
+    [self.view endEditing:(YES)];
+    
+}
+
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
