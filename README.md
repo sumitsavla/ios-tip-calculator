@@ -1,16 +1,16 @@
 ios-tip-calculator
 ==================
 
-Video demonstrating app:
-https://www.youtube.com/watch?v=9_ViP9HM8_c
+[Video demonstrating app]
+(https://www.youtube.com/watch?v=9_ViP9HM8_c)
 
-Installation:
+## Installation:
 
 - Clone Repo
 - Open TIpCalculator.xcodeproj file 
 - Build and run in Xcode
 
-Technical Details:
+## Technical Details:
 
 UI components:
 
