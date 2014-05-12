@@ -1,7 +1,7 @@
 ios-tip-calculator
 ==================
 
-[Video demonstrating app]
+[Video Demonstration]
 (https://www.youtube.com/watch?v=9_ViP9HM8_c)
 
 ## Installation:
