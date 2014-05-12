@@ -55,6 +55,7 @@
     // Load default values and update UI controls
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     int splitValue = [defaults integerForKey:@"splitDefault"];
+    // when app starts very first time 
     if(splitValue == 0){
         splitValue = 2;
     }

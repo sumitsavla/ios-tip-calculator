@@ -22,8 +22,16 @@
     // Load Defaults
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     int splitValue = [defaults integerForKey:@"splitDefault"];
+    // when app starts very first time
+    if(splitValue == 0){
+        splitValue = 2;
+    }
     self.splitDefault.text = [NSString stringWithFormat:@"%d", splitValue];
     int tipValue = [defaults integerForKey:@"tipDefault"];
+    // when app starts very first time
+    if(tipValue == 0){
+        tipValue = 10;
+    }
     self.tipDefault.text = [NSString stringWithFormat:@"%d%s", tipValue, "%"];
 	
 }
